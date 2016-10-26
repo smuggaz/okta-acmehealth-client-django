@@ -1,0 +1,55 @@
+{% extends 'stateful/index.html' %}
+{% block content %}
+<header class="AppHeader">
+    <div class="Wrap">
+      <h1 class="AppLogo">
+        <a href="/">AcmeHealth</a>
+      </h1>
+      
+      <nav class="AppHeader-nav">
+        <ul>
+          <li class="is-active"><a href="/">Home</a></li>
+        </ul>
+      </nav>
+      
+      <div class="UserMenu">
+        <div class="UserMenu-avatar">
+          <img src="{{claims.picture}}">
+        </div>
+        
+        <a class="UserMenu-name" href="/logout">{{tokens.claims.email}}</a>
+        <a class="UserMenu-toggle" href="/logout"></a>
+      </div>
+    </div>
+</header>
+<div class="AppBody">
+  <div class="Wrap">
+    <div class="AppointmentCard has-indicator">
+      <div class="AppointmentCard-time"></div>
+        <a class="AppointmentCard-menuToggle"></a>
+        <div class="AppointmentCard-content">
+          {% if tokens.idToken %}
+          <div class="AppointmentCard-label">idToken</div>
+          <div class="AppointmentCard-description">
+            <pre style="width:500px;">{{tokens.idToken}}</pre>
+          </div>
+          {% endif %}
+          {% if tokens.accessToken %}
+          <div class="AppointmentCard-label">AccessToken</div>
+          <div class="AppointmentCard-description">
+            <pre style="width:500px;">{{tokens.accessToken}}</pre>
+          </div>
+          {% endif %}
+          {% if claims %}
+          <div class="AppointmentCard-label">Claims</div>
+          <div class="AppointmentCard-description">
+            <pre style="width:500px;">{{claims}}</pre>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
