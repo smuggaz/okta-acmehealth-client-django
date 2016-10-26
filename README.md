@@ -1,4 +1,4 @@
-# AcmeHealth Okta OpenID Connect and OAuth2 Samples using Django
+# AcmeHealth Samples using Django
 The following examples show best practices for using Okta's Sign-In Widget and AuthJS SDK with Django
 <p align="center"><img src ="https://raw.githubusercontent.com/jmelberg-okta/doc-assets/master/acmeHeath/login-long.png" /></p>
 
